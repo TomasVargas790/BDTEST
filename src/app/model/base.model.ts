@@ -1,5 +1,5 @@
-export default interface baseModel{
-    id:number,
-    createdAt:Date,
-    updatedAt:Date
+export default interface baseModel {
+    id: number | string,
+    createdAt: Date,
+    updatedAt: Date
 };

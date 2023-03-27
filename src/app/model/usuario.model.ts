@@ -1,5 +1,7 @@
 import baseModel from './base.model'
 
+type Rol = 1 | 2; 
+
 export interface Usuario extends baseModel {
     nombre: string,
     apellido: string,
@@ -9,4 +11,3 @@ export interface Usuario extends baseModel {
     correo: string,
 }
 
-type Rol = 1 | 2; 

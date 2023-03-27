@@ -1,17 +1,19 @@
 import { Faker, faker } from '@faker-js/faker';
+import { CandidatosArray } from './example'
+import candidatoRouter from './service/candidato.service'
+import Express from 'express';
+import dotenv from 'dotenv';
 
-import { CreateCandidato } from './dto/candidato.dto';
-import { Candidato } from './model/candidato.model';
+dotenv.config();
+
+const PORT = process.env.PORT;
+
+let expressApp = Express();
+
+expressApp.use('/candidato', candidatoRouter);
 
 
-let CandidatosArray: Candidato[] = [];
-for (let i = 0; i < 30; i++) {
-    let currentCandidato: CreateCandidato = {
-        nombre: faker.name.firstName(),
-        apellido: faker.name.lastName(),
-        documento: faker.datatype.number(),
-        correo: faker.internet.email(),
-        telefono: parseInt(faker.phone.number()),
-        curriculum: faker.commerce.productDescription(),
-    }
-}
+expressApp.listen(PORT, () => {
+    console.log('Servidor funcionando en puerto ' + PORT);
+
+});

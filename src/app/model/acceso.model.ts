@@ -1,6 +1,6 @@
 import baseModel from './base.model';
 
-export  interface acceso extends baseModel{
+export  interface Acceso extends baseModel{
     candidatoAcceso: number,
     nick: string,
     hash: string,
