@@ -1,6 +1,6 @@
 import baseModel from './base.model';
 
-export interface Candidato extends baseModel{
+export interface Candidato extends baseModel {
     nombre: string,
     apellido: string,
     documento: number,

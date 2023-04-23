@@ -1,43 +1,21 @@
 import { Candidato } from '../model/candidato.model';
-import { CreateCandidato, updateCandidato, deleteCandidato } from '../dto/candidato.dto'
+import { CreateCandidato, UpdateCandidato, DeleteCandidato } from '../dto/candidato.dto'
 import express from 'express';
-import nanoid from 'nanoid';
+import { nanoid } from 'nanoid';
 import { CandidatosArray } from '../example';
-
-let candidatoRouter = express.Router();
-
-candidatoRouter.get('/get/:id', (req, res) => {
-
-    let candidatoId: string | number = req.params.id;
+import { deleteCandidato, getCandidato, insertCandidato, updateCandidato } from '../controller/candidato.controller';
 
 
-    candidatoId = CandidatosArray[0].id;
+let router = express.Router();
 
-    CandidatosArray.find(Candidato => {
-        if (Candidato.id == candidatoId) return res.send(Candidato)
-        else return res.send('ono')
-    });
+router.get('/', getCandidato);
 
+router.get('/:id', getCandidato);
 
-});
-/*
-candidatoRouter.post('/register', (req, res) => {
+router.post('/', insertCandidato);
 
-});
+router.patch('/:id', updateCandidato);
 
-candidatoRouter.post('/login', (req, res) => {
+router.delete('/:id', deleteCandidato);
 
-});
-
-
-
-candidatoRouter.put('/update/:id', (req, res) => {
-
-});
-
-candidatoRouter.delete('/delete/:id', (req, res) => {
-
-});
-*/
-export default candidatoRouter;
-
+export default router

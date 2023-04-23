@@ -2,6 +2,6 @@ import { Acceso } from "../model/acceso.model";
 
 export interface CreateAcceso extends Omit<Acceso, 'id' | 'updatedAt' | 'createdAt'> { };
 
-export interface updateAcceso extends Partial<CreateAcceso> { };
+export interface UpdateAcceso extends Partial<CreateAcceso> { };
 
-export interface deleteAcceso extends Pick<Acceso, 'id'> { }
+export interface DeleteAcceso extends Pick<Acceso, 'id'> { }

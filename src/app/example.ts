@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 
 
 export let CandidatosArray: Candidato[] = [];
-for (let i = 0; i <= 30; i++) {
+for (let i = 0; i <= 3; i++) {
     let currentCandidato: Candidato = {
         nombre: faker.name.firstName(),
         apellido: faker.name.lastName(),
@@ -18,3 +18,4 @@ for (let i = 0; i <= 30; i++) {
     };
     CandidatosArray.push(currentCandidato);
 }
+console.log(CandidatosArray[0]);
